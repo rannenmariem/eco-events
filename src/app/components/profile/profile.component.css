@@ -1,0 +1,247 @@
+/* Conteneur principal */
+.profile-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Deux colonnes */
+  gap: 20px;
+  margin: 20px;
+}
+
+/* Partie gauche : Profil utilisateur */
+.profile-left {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #388e3c;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2e7d32;
+}
+
+/* Partie droite : Sections des événements */
+.events-section {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: grid; /* Active la grille */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Deux colonnes dynamiques */
+  gap: 20px; /* Espacement entre les cartes */
+}
+
+
+/* Style pour chaque événement */
+.event {
+  display: flex;
+  flex-direction: row;    /* Dispose les éléments (image et détails) sur la même ligne */
+  align-items: center;    /* Centre verticalement l'image et les détails */
+  border: 1px solid #ddd; /* Bordure autour de chaque événement */
+  border-radius: 8px;     /* Coins arrondis */
+  padding: 10px;          /* Espacement interne */
+  margin-bottom: 20px;    /* Espacement entre les événements */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Effet au survol */
+  width: 100%;            /* Occupe toute la largeur du parent */
+  max-width: 800px;       /* Limite la largeur maximale à 800px */
+  box-sizing: border-box; /* Inclut les bordures et padding dans la largeur totale */
+}
+
+.event-link {
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: inherit; /* Conserve la couleur du texte définie par défaut */
+  display: flex; /* Utilise Flexbox dans le lien */
+  flex-direction: row; /* Aligne l'image et les détails horizontalement */
+  width: 100%; /* Occupe toute la largeur du parent */
+}
+.event img {
+  width: 120px;          /* Taille fixe pour l'image */
+  height: 120px;         /* Taille fixe pour l'image */
+  border-radius: 8px;    /* Coins arrondis */
+  object-fit: cover;     /* Assurez-vous que l'image couvre le conteneur sans déformer */
+  margin-right: 20px;    /* Espacement entre l'image et le texte */
+  flex-shrink: 0;        /* Empêche l'image de se réduire */
+  display: block;        /* Utilise block pour que l'image soit un bloc de niveau supérieur */
+  margin-left: auto;     /* Centrer horizontalement */
+  margin-right: auto;    /* Centrer horizontalement */
+}
+
+.event .details {
+  flex: 1; /* Le texte occupe tout l'espace restant */
+  display: flex; /* Active Flexbox pour les sous-éléments du texte */
+  flex-direction: column; /* Place les sous-éléments (titre, description) verticalement */
+  justify-content: flex-start; /* Aligne le texte en haut du conteneur */
+  margin-left: 20px; /* Espacement entre l'image et le texte */
+}
+
+.event h2 {
+  margin: 0 0 10px 0; /* Supprime la marge supérieure et ajoute une marge inférieure */
+  font-size: 18px; /* Taille de la police pour le titre */
+  color: #2e7d32; /* Couleur verte */
+}
+
+.events-section h2 {
+  grid-column: 1 / -1; /* Le titre occupe toute la largeur de la grille */
+  margin-bottom: 20px; /* Ajoutez un espacement en dessous */
+  font-size: 1.5rem;
+}
+
+.event p {
+  margin: 5px 0; /* Espacement uniforme entre les paragraphes */
+  font-size: 14px; /* Taille du texte */
+  color: #333; /* Couleur du texte */
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.actions button {
+  width: 120px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button.interested {
+  background-color: #ff9800;
+  color: white;
+}
+
+button.participating {
+  background-color: #4caf50;
+  color: white;
+}
+
+
+/*style de modale*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  max-height: 500px;  /* Hauteur maximale */
+  overflow-y: auto;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 95%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+.actions button {
+  width: 120px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.modal-buttons {
+  display: flex;
+  justify-content: space-between; /* Permet de séparer les boutons */
+  width: 100%;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #388e3c;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #2e7d32;
+}
+
+button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+button[type="button"]:hover {
+  background-color: #e53935;
+}
+/*profil*/
+
+
+
+
+.profile-right {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+}
+button {
+  margin-top: 10px;
+}

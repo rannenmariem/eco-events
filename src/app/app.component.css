@@ -1,0 +1,52 @@
+/* Barre de navigation */
+.toolbar {
+  background-color: #2e7d32; /* Vert éco-responsable */
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px; /* Coins arrondis */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* Logo de la barre */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Espacement entre les éléments */
+.spacer {
+  flex: 1 1 auto;
+}
+
+/* Style des liens de navigation */
+.nav-link {
+  color: black;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transition fluide */
+}
+
+/* Icônes dans les liens */
+.nav-link mat-icon {
+  margin-right: 5px;
+  font-size: 1.3rem;
+  color: black;
+}
+
+/* Effet de survol */
+.nav-link:hover {
+  background-color: #388e3c; /* Couleur plus foncée au survol */
+  border-radius: 5px;
+  transform: scale(1.05); /* Effet de zoom */
+  color: white;
+}
+.nav-link:hover mat-icon {
+  color: white;
+}
+/* Désactive la transformation en majuscule des boutons */
+.mat-button {
+  text-transform: none;
+}

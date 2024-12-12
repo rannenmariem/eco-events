@@ -1,0 +1,20 @@
+<div *ngIf="event" class="event-details">
+  <h1>{{ event.title }}</h1>
+  <p><strong>Date :</strong> {{ event.date }}</p>
+  <p><strong>Lieu :</strong> {{ event.location || 'Non spécifié' }}</p>
+  <p><strong>Organisateur :</strong> {{ event.organizer || 'Non spécifié' }}</p>
+  <img [src]="event.image" alt="{{ event.title }}" />
+  <p><strong>Description :</strong> {{ event.description }}</p>
+
+  <div class="actions">
+    <!-- Bouton pour marquer comme intéressé -->
+    <button (click)="toggleInterest()" [class.interested]="isInterested">
+      {{ isInterested ? 'Intéressée' : 'Intéresser' }}
+    </button>
+
+    <!-- Bouton pour marquer comme participant -->
+    <button (click)="toggleParticipation()" [class.participating]="isParticipating">
+      {{ isParticipating ? 'Participée' : 'Participer' }}
+    </button>
+  </div>
+</div>

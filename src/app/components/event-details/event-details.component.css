@@ -1,0 +1,62 @@
+.event-details {
+  text-align: left; /* Aligne le texte à gauche pour une meilleure lisibilité */
+  margin: 20px auto; /* Centre le conteneur horizontalement */
+  padding: 20px; /* Ajoute un espace intérieur */
+  max-width: 800px; /* Limite la largeur maximale */
+  background-color: #f9f9f9; /* Ajoute un fond clair pour un meilleur contraste */
+  border-radius: 10px; /* Coins arrondis */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile pour un effet de profondeur */
+}
+
+.event-details h1 {
+  font-size: 24px; /* Taille du titre */
+  margin-bottom: 15px; /* Espacement sous le titre */
+  color: #2e7d32; /* Couleur verte */
+}
+
+.event-details p {
+  margin: 10px 0; /* Espacement uniforme entre les paragraphes */
+  font-size: 16px; /* Taille de la police */
+  line-height: 1.6; /* Interligne pour une meilleure lisibilité */
+  color: #333; /* Couleur du texte */
+}
+
+img {
+  width: 150px; /* Définit la largeur */
+  height: 150px; /* Définit la hauteur */
+  object-fit: cover; /* Ajuste l'image pour qu'elle remplisse l'espace sans déformation */
+  border-radius: 8px; /* Ajoute des coins arrondis (optionnel) */
+  margin: 20px auto; /* Centrer l'image */
+  display: block; /* Assure que l'image est centrée */
+}
+
+.actions {
+  display: flex; /* Aligne les boutons sur une ligne */
+  justify-content: center; /* Centre les boutons horizontalement */
+  gap: 15px; /* Ajoute un espacement entre les boutons */
+  margin-top: 20px; /* Espacement au-dessus des actions */
+}
+
+.actions button {
+  background-color: #2e7d32; /* Couleur par défaut des boutons */
+  color: white; /* Texte blanc */
+  padding: 10px 20px; /* Taille intérieure des boutons */
+  border: none; /* Supprime les bordures */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Pointeur au survol */
+  font-size: 16px; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
+  transition: background-color 0.3s ease; /* Animation fluide au survol */
+}
+
+.actions button:hover {
+  background-color: #388e3c; /* Couleur au survol */
+}
+
+.actions button.interested {
+  background-color: #ff9800; /* Couleur orange pour "Intéressée" */
+}
+
+.actions button.participating {
+  background-color: #700404; /* Couleur rouge foncé pour "Participée" */
+}

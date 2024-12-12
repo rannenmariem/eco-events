@@ -1,0 +1,101 @@
+<div class="profile-container">
+  <!-- Partie gauche : Informations utilisateur -->
+  <div class="profile-left">
+    <h1>Votre profil</h1>
+    <div class="profile-image">
+      <img [src]="user.profileImage" alt="Image de profil" />
+    </div>
+    <div class="profile-info">
+      <p><strong>Nom :</strong> {{ user.lastName }}</p>
+      <p><strong>Prenom :</strong> {{ user.firstName }}</p>
+      <p><strong>Email :</strong> {{ user.email }}</p>
+      <p><strong>Date de naissance :</strong> {{ user.birthdate | date }}</p>
+      <p><strong>Ville :</strong> {{ user.city }}</p>
+      <p><strong>Adresse :</strong> {{ user.address }}</p>
+      <p><strong>Travail :</strong> {{ user.job }}</p>
+    </div>
+    <button (click)="openEditModal()">Modifier mes informations</button>
+  </div>
+
+  <!-- Partie droite : Contient les deux sections d'événements côte à côte -->
+  <div class="profile-right">
+    <div class="events-sections">
+      <div class="events-section">
+        <h2>Événements intéressés</h2>
+        <div *ngFor="let event of interestedEvents" class="event">
+          <a [routerLink]="['/event', event.id]" class="event-link">
+            <img [src]="event.image" alt="{{ event.title }}" />
+            <div class="details">
+              <h2>{{ event.title }}</h2>
+              <p>Date : {{ event.date }}</p>
+              <p>Lieu : {{ event.location }}</p>
+              <p>Organisateur : {{ event.organizer }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="events-section">
+        <h2>Événements participés</h2>
+        <div *ngFor="let event of participatingEvents" class="event">
+          <a [routerLink]="['/event', event.id]" class="event-link">
+            <img [src]="event.image" alt="{{ event.title }}" />
+            <div class="details">
+              <h2>{{ event.title }}</h2>
+              <p>Date : {{ event.date }}</p>
+              <p>Lieu : {{ event.location }}</p>
+              <p>Organisateur : {{ event.organizer }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modale de modification -->
+  <div *ngIf="isModalOpen" class="modal-overlay">
+    <div class="modal-content">
+      <h2>Modifier les informations</h2>
+      <form [formGroup]="userForm" (ngSubmit)="updateProfile()">
+        <div class="form-group">
+          <label for="firstName">Prénom :</label>
+          <input formControlName="firstName" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Nom :</label>
+          <input formControlName="lastName" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="birthdate">Date de naissance :</label>
+          <input formControlName="birthdate" type="date" required />
+        </div>
+        <div class="form-group">
+          <label for="city">Ville :</label>
+          <input formControlName="city" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="address">Adresse :</label>
+          <input formControlName="address" type="text" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input formControlName="email" type="email" required />
+        </div>
+        <div class="form-group">
+          <label for="job">Travail :</label>
+          <input formControlName="job" type="text" required />
+        </div>
+
+        <!-- Champ de téléchargement de l'image -->
+        <div class="form-group">
+          <label for="profileImage">Image de profil :</label>
+          <input type="file" (change)="onFileChange($event)" />
+        </div>
+        <div class="modal-buttons">
+          <button type="button" (click)="closeEditModal()">Annuler</button>
+          <button type="submit" [disabled]="!userForm.valid">Enregistrer</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

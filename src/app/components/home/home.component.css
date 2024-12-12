@@ -1,0 +1,122 @@
+.events {
+  display: flex; /* Active Flexbox */
+  flex-direction: column; /* Aligne les événements verticalement */
+  align-items: center; /* Centre les événements horizontalement */
+  padding: 20px; /* Espacement intérieur */
+  box-sizing: border-box; /* Inclut les bordures et padding dans la largeur totale */
+  max-width: 1200px; /* Limite la largeur maximale du conteneur */
+  margin: 0 auto; /* Centre le conteneur sur la page */
+}
+
+
+.event-link {
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: inherit; /* Conserve la couleur du texte définie par défaut */
+  display: flex; /* Utilise Flexbox dans le lien */
+  flex-direction: row; /* Aligne l'image et les détails horizontalement */
+  width: 100%; /* Occupe toute la largeur du parent */
+}
+
+
+.event:hover {
+  transform: scale(1.02); /* Agrandit légèrement la carte lors du survol. */
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Accentue l'ombre pour indiquer l'interaction. */
+}
+
+.event {
+  display: flex; /* Active Flexbox pour placer les éléments horizontalement */
+  flex-direction: row; /* Place l'image, les détails et les actions côte à côte */
+  align-items: center; /* Aligne verticalement les éléments */
+  justify-content: space-between; /* Met de l'espace entre les détails et les boutons */
+  border: 1px solid #ddd; /* Bordure autour de chaque événement */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 10px; /* Espacement intérieur */
+  margin-bottom: 20px; /* Espacement entre les événements */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animation au survol */
+  width: 100%; /* Chaque événement occupe 100% du conteneur parent */
+  max-width: 800px; /* Limite la largeur maximale à 800px */
+  box-sizing: border-box; /* Inclut les bordures et padding dans la largeur */
+}
+
+.event .details {
+  flex: 1; /* Le texte occupe tout l'espace restant */
+  display: flex; /* Active Flexbox pour les sous-éléments du texte */
+  flex-direction: column; /* Place les sous-éléments (titre, description) verticalement */
+  justify-content: flex-start; /* Aligne le texte en haut du conteneur */
+  margin-left: 20px; /* Espacement entre l'image et le texte */
+}
+.event img {
+  width: 150px; /* Taille fixe pour toutes les images */
+  height: 150px; /* Taille fixe pour toutes les images */
+  border-radius: 8px; /* Coins arrondis pour l'image */
+  margin-right: 20px; /* Espacement entre l'image et le texte */
+  flex-shrink: 0; /* Empêche l'image de se réduire */
+}
+
+.actions button {
+  width: 120px; /* Largeur fixe pour tous les boutons */
+  padding: 10px; /* Taille intérieure des boutons */
+  border: none; /* Supprime les bordures */
+  border-radius: 5px; /* Coins arrondis */
+  cursor: pointer; /* Curseur pointeur au survol */
+  font-size: 14px; /* Taille du texte */
+  font-weight: bold; /* Texte en gras */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Animation fluide */
+  text-align: center; /* Aligne le texte des boutons */
+}
+
+.actions button:hover {
+  transform: scale(1.05); /* Agrandissement au survol */
+}
+
+.actions button.interested {
+  background-color: #ff9800; /* Couleur orange pour "Intéressé" */
+  color: white; /* Texte blanc */
+}
+
+.actions button.participating {
+  background-color: #4caf50; /* Couleur verte pour "Participer" */
+  color: white; /* Texte blanc */
+}
+
+
+
+
+.event h2 {
+  margin: 0 0 10px 0; /* Supprime la marge supérieure et ajoute une marge inférieure */
+  font-size: 18px; /* Taille de la police pour le titre */
+  color: #2e7d32; /* Couleur verte */
+}
+
+.event p {
+  margin: 5px 0; /* Espacement uniforme entre les paragraphes */
+  font-size: 14px; /* Taille du texte */
+}
+
+
+select {
+  padding: 10px; /* Ajoute un espace intérieur de 10px à l'intérieur du champ de sélection. */
+  margin-bottom: 20px; /* Ajoute un espace en bas du champ de sélection. */
+  border-radius: 5px; /* Arrondit les coins du champ de sélection. */
+  border: 1px solid #ccc; /* Ajoute une bordure grise autour du champ de sélection. */
+}
+
+.actions {
+  display: flex; /* Active Flexbox pour aligner les boutons */
+  flex-direction: column; /* Aligne les boutons verticalement */
+  gap: 10px; /* Espacement entre les boutons */
+  flex-shrink: 0; /* Empêche la colonne des boutons de rétrécir */
+}
+/* Style simple pour l'étiquette "En cours" */
+.ongoing {
+  font-weight: bold;               /* Texte en gras */
+  color: white;                    /* Texte en blanc */
+  background-color: #4caf50;       /* Couleur verte pour indiquer l'état "En cours" */
+  padding: 3px 8px;                /* Espacement autour du texte */
+  border-radius: 12px;             /* Coins arrondis */
+  font-size: 14px;                 /* Taille du texte */
+  display: inline-block;           /* Permet de garder l'étiquette dans une ligne */
+  text-align: center;              /* Centre le texte */
+  margin-top: 5px;                 /* Un léger espace au-dessus */
+}

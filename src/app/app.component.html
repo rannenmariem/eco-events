@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="toolbar">
+  <span class="logo">Eco Events</span> <!-- nom de l'application -->
+  <span class="spacer"></span>  <!-- Un espaceur pour pousser les éléments suivants à l'extrémité droite -->
+
+  <!-- Accueil -->
+  <a mat-button routerLink="/home" class="nav-link"> <!-- Lien vers la page d'accueil -->
+    <mat-icon>home</mat-icon> Accueil    <!-- Icône pour indiquer la page d'accueil -->
+  </a>
+
+  <!-- Recherche -->
+  <a mat-button routerLink="/search" class="nav-link">
+    <mat-icon>search</mat-icon> Recherche
+  </a>
+
+  <!-- Profil -->
+  <a mat-button routerLink="/profile" class="nav-link">
+    <mat-icon>account_circle</mat-icon> Profil
+  </a>
+
+  <!-- Connexion -->
+  <a mat-button routerLink="/auth" class="nav-link">
+    <mat-icon>login</mat-icon> Connexion
+  </a>
+</mat-toolbar>
+<router-outlet></router-outlet> <!-- Conteneur pour afficher les composants associés aux routes -->

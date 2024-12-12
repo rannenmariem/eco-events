@@ -1,0 +1,61 @@
+<div class="search-container">
+  <!-- Barre de recherche -->
+  <div class="search-bar">
+    <h1>Recherchez un événement</h1>
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      placeholder="Rechercher un événement..."
+      (input)="filterEvents()"
+    />
+  </div>
+
+  <!-- Résultats -->
+  <div class="event-list">
+    <div *ngFor="let event of filteredEvents" class="event-card">
+      <a [routerLink]="['/event', event.id]" class="event-link">
+        <img [src]="event.image" alt="{{ event.title }}" />
+        <div class="details">
+          <h2>{{ event.title }}</h2>
+          <p>Date : {{ event.date }}</p>
+          <p>Lieu : {{ event.location }}</p>
+          <p>Organisateur : {{ event.organizer }}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Barre de filtres -->
+  <div class="filters-container">
+    <h2>Filtres</h2>
+
+    <div class="filter">
+      <label for="categorySelect">Catégorie :</label>
+      <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="filterEvents()">
+        <option value="">Toutes</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+
+    <div class="filter">
+      <label for="locationSelect">Localisation :</label>
+      <input
+        id="locationSelect"
+        type="text"
+        [(ngModel)]="selectedLocation"
+        placeholder="Saisissez une ville"
+        (input)="filterEvents()"
+      />
+    </div>
+
+    <div class="filter">
+      <label for="dateSelect">Date :</label>
+      <input
+        id="dateSelect"
+        type="date"
+        [(ngModel)]="selectedDate"
+        (input)="filterEvents()"
+      />
+    </div>
+  </div>
+</div>
