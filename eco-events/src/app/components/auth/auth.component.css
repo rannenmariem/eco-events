@@ -1,0 +1,201 @@
+/* Général */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f6f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Conteneur principal */
+.auth-container {
+  width: 100%;
+  max-width: 440px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Titre */
+.auth-container h1 {
+  font-size: 26px;
+  color: #1b5e20;
+  margin-bottom: 25px;
+}
+
+/* Formulaires */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Groupes de champs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 14px;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 15px;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  transition: border-color 0.3s, box-shadow 0.2s;
+}
+
+input:focus {
+  border-color: #66bb6a;
+  box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.2);
+  outline: none;
+}
+
+/* Boutons principaux */
+button {
+  padding: 12px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #43a047;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #388e3c;
+}
+
+/* Bouton s’inscrire */
+.register-button {
+  background-color: #1976d2;
+  margin-top: 15px;
+  color: white;
+}
+
+.register-button:hover {
+  background-color: #0d47a1;
+}
+
+/* Boutons OAuth */
+.oauth-buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.oauth-buttons button {
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+}
+
+.oauth-buttons button:first-child {
+  background-color: #db4437; /* Google rouge */
+}
+
+.oauth-buttons button:first-child:hover {
+  background-color: #c1351d;
+}
+
+.oauth-buttons button:last-child {
+  background-color: #3b5998; /* Facebook */
+}
+
+.oauth-buttons button:last-child:hover {
+  background-color: #2d4373;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.modal-content h2 {
+  text-align: center;
+  color: #1b5e20;
+  margin-bottom: 20px;
+}
+
+/* Formulaire modale */
+.modal-content .form-group {
+  width: 80%;
+  margin: 0 auto 15px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+
+/* Actions dans la modale */
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.actions button {
+  width: 100%;
+  font-weight: 600;
+}
+
+.cancel-button {
+  background-color: #e53935;
+  color: white;
+}
+
+.cancel-button:hover {
+  background-color: #c62828;
+}
+
+.modal-content button[type="submit"] {
+  background-color: #2e7d32;
+}
+
+.modal-content button[type="submit"]:hover {
+  background-color: #1b5e20;
+}

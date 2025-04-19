@@ -1,0 +1,34 @@
+<div class="events">
+  <h1>Événements</h1>
+
+  <!-- Filtrage par catégorie -->
+  <div>
+    <label for="categorySelect">Filtrer par catégorie : </label>
+    <select id="categorySelect" [(ngModel)]="selectedCategory" (change)="filterEventsByCategory()">
+      <option value="">Toutes les catégories</option>
+      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+    </select>
+  </div>
+
+  <!-- Affichage des événements filtrés -->
+  <div *ngFor="let event of filteredEvents" class="event">
+    <a [routerLink]="['/event', event.id]" class="event-link">
+      <img [src]="event.image" alt="{{ event.title }}" />
+      <div class="details">
+        <h2>{{ event.title }}</h2>
+        <p>Date : {{ event.date }}</p>
+        <p>Lieu : {{ event.location }}</p>
+        <p>Organisateur : {{ event.organizer }}</p>
+        <p *ngIf="event.isOngoing" class="ongoing">En cours</p>
+      </div>
+    </a>
+    <div class="actions">
+      <button (click)="toggleInterest(event)" [class.interested]="event.isInterested">
+        {{ event.isInterested ? 'Intéressée' : 'Intéresser' }}
+      </button>
+      <button (click)="toggleParticipation(event)" [class.participating]="event.isParticipating">
+        {{ event.isParticipating ? 'Participée' : 'Participer' }}
+      </button>
+    </div>
+  </div>
+</div>
